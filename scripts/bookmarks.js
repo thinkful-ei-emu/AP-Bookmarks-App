@@ -4,32 +4,42 @@
 const bookmarkList = (function () {
 
     //Handle add new button click
-    function handleaddNewBookmarkClicked() {
+    function handleAddNewBookmarkClicked() {
         $("#js-new-bookmark").on('click', function(event){
             event.preventDefault();
             $("#js-new-bookmark-form").removeClass('hidden');
             $("#js-new-bookmark").addClass('hidden');
             $('.declare-add-button').addClass('hidden');
         });
-        }
+        };
+
+    function handleCloseAddNewForm(){
+        $("#close-form").on('click', function(event){
+            event.preventDefault();
+            $("#js-new-bookmark-form").addClass('hidden');
+            $("#js-new-bookmark").removeClass('hidden');
+            $('.declare-add-button').removeClass('hidden');
+        })
+    }
 
     //handle add new bookmark form submit
-    function handleaddBookmarkSubmit() {
+    function handleAddBookmarkSubmit() {
+
       
     }
 
     //handle delete bookmark
-    function handledeleteBookmark() {
+    function handleDeleteBookmark() {
 
 }
 
 //handle filter by ratings
-function handlefilterRatings() {
+function handleFilterRatings() {
 
 }
 
 //handle expanding bookmark in list with condensed default
-function handleexpandingBookmark() {
+function handleExpandingBookmark() {
 
 }
 
@@ -60,11 +70,12 @@ function render() {
 }
 
 function bindEventListeners() {
-    handleaddNewBookmarkClicked();
-    handleaddBookmarkSubmit();
-    handledeleteBookmark();
-    handlefilterRatings();
-    handleexpandingBookmark();
+    handleAddNewBookmarkClicked();
+    handleAddBookmarkSubmit();
+    handleDeleteBookmark();
+    handleFilterRatings();
+    handleExpandingBookmark();
+    handleCloseAddNewForm();
 
 }
 
