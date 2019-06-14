@@ -5,3 +5,15 @@
   .hidden{
     display: none;
   } 
+
+  #form-container{
+    margin-top: 20px;
+  }
+
+  .header{
+    text-align: center;
+  }
+
+  #js-new-bookmark{
+    float: left;
+  }
