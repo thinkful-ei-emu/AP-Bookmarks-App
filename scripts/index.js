@@ -1,6 +1,4 @@
 'use strict';
 
-$(function(){
+/* global Store, cuid */
 
-
-});
