@@ -18,7 +18,7 @@ const store = (function(){
 
   const toggleExpand = function(id, expand) {
     const bookmark = this.findById(id);
-    bookmark.expand = expand;
+    bookmark.expanded = expand;
   };
 
   function findAndUpdate(id, newData){
@@ -41,5 +41,5 @@ const store = (function(){
     findAndUpdate,
     setFilterTerm,
   };
-  
+
 }());
