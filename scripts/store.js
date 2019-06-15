@@ -1,70 +1,45 @@
 'use strict';
+/* global  */
+// eslint-disable-next-line no-unused-vars
+const store = (function(){
 
-const store = (function () {
+  const addBookmark = function(bookmark) {
+    bookmark.expanded = false;
+    this.bookmarks.push(bookmark);
+  };
 
-    //adding bookmark function
+  const findById = function(id) {
+    return this.bookmarks.find(bookmark => bookmark.id === id);
+  };
 
-    function addBookmark(bookmarkObj) {
-        this.bookmarks.push(bookmarkObj);
-    }
+  const findAndDelete = function(id) {
+    this.bookmarks = this.bookmarks.filter(bookmark => bookmark.id !== id);
+  };
 
-    //deleting bookmark by id
+  const toggleExpand = function(id, expand) {
+    const bookmark = this.findById(id);
+    bookmark.expand = expand;
+  };
 
-    function deleteBookmark(id) {
-        this.bookmarks = this.bookmarks.filter(bookmark => bookmark.id !== id);
-    }
+  function findAndUpdate(id, newData){
+    const target = this.findById(id);
+    return Object.assign(target, newData);
+  }
 
-    //filter by rating
+  const setFilterTerm = function(term) {
+    this.filterTerm = term;
+  };
 
-    function filterByRating(rating) {
-        this.ratingFilter = rating;
-        this.bookmarks = this.bookmarks.filter(
-            bookmark => bookmark.rating >= this.ratingFilter
-        );
-    }
-
-    //expand bookmark
-
-    function expandBookmark(id) {
-        const bookmarkToToggle = this.bookmarks.find(
-            bookmark => bookmark.id === id
-        );
-        bookmarkToToggle.expanded = !bookmarkToToggle.expanded;
-    }
-
-    // Store and display error messages
-    function setErrorMessage(error) {
-        this.errorMessage = error;
-    }
-
-    //find by ID
-
-    const findById = function (id) {
-        return this.bookmarks.find(bookmark => bookmark.id === id)
-    }
-
-    // Function for toggling adding bookmark property
-    function toggleAddingBookmarkStatus(id) {
-        this.adding = !this.adding;
-    }
-
-
-
-
-    return {
-        bookmarks: [],
-        adding: false,
-        //expanded: null,
-        ratingFilter: 0,
-        errorMessage: '',
-        addBookmark,
-        findById,
-        expandBookmark,
-        filterByRating,
-        deleteBookmark,
-        setErrorMessage,
-    };
-
-
-
+  return {
+    bookmarks: [],
+    filterTerm: 1,
+    errorKey: '',
+    addBookmark,
+    findById,
+    findAndDelete,
+    toggleExpand,
+    findAndUpdate,
+    setFilterTerm,
+  };
+  
 }());
