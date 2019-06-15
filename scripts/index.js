@@ -10,8 +10,11 @@ $(document).ready(function() {
 
   api.getBookmarks()
     .then((bookmarks) => {
+
       bookmarks.forEach((bookmark) => store.addBookmark(bookmark));
+      
       bookmarkList.render();
+      
     });
     
 });

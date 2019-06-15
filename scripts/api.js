@@ -65,28 +65,11 @@ let api = (function() {
     
   }
 
-
-  //if I have time to do edit fxn, will need this
-  // function updateBookmark(id, updateData){
-
-  //   const uData = JSON.stringify(updateData);
-
-  //   return listApiFetch(`${BASE_URL}/bookmarks/${id}`, {
-  //     method: 'PATCH',
-  //     headers: new Headers({
-  //       'Content-Type': 'application/json'
-  //     }),
-  //     body: uData
-
-  //   });
-    
-  // }
-
   return {
     getBookmarks,
     createBookmark,
     deleteBookmark,
-    //updateBookmark
+
   };
 
 }());

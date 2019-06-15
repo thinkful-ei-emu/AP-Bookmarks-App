@@ -80,9 +80,13 @@ const bookmarkList = (function(){
   //handle add bookmark form click
   function handleAddNewBookmarkFormClicked() {
     $('#js-bookmark-button-form').click(function(event){
+
       event.preventDefault();
+
       $('#js-submit-bookmark-form').removeClass('hidden');
+
       $('#js-bookmark-button-form').addClass('hidden');
+
     });
   }
 
@@ -93,19 +97,28 @@ const bookmarkList = (function(){
       event.preventDefault();
 
       $('#js-bookmark-button-form').removeClass('hidden');
+
       $('#js-submit-bookmark-form').addClass('hidden');
+
       $('#js-submit-bookmark-form')[0].reset();
+
     });
   }
 
   //handle new bookmark form submit
   function handleAddBookmarkSubmit() {
     $('#js-submit-bookmark-form').submit(function(event) {
+
       event.preventDefault();
+
       let formElement = $('#js-submit-bookmark-form')[0];
+
       let addingNew = serializeJson(formElement);
+
       $('#js-bookmark-button-form').removeClass('hidden');
+
       $('#js-submit-bookmark-form').addClass('hidden');
+
       $('#js-submit-bookmark-form')[0].reset();
       
       api.createBookmark(addingNew)
@@ -122,8 +135,11 @@ const bookmarkList = (function(){
 
   //get id from element
   function getBookmarkIdFromElement(bookmark) {
+
     return $(bookmark)
+
       .closest('.js-bookmark-element')
+
       .data('bookmark-id');
   }
 
@@ -152,12 +168,19 @@ const bookmarkList = (function(){
     $('.js-bookmark-list').on('click', '.js-expand', function(event){
       
       const id = getBookmarkIdFromElement(event.target);
+
       let bookmark = store.findById(id);
+
       let opposite = {
+        
         expanded: !bookmark.expanded
+
       };      
+
       store.findAndUpdate(id, opposite);
+
       render();    
+
     });
 
   }
@@ -166,17 +189,24 @@ const bookmarkList = (function(){
   //handle filter
   function handleFilter() {
     $('#rating-filter').on('change', function(event) {
+
       const rating = $(event.currentTarget).val();
+
       store.setFilterTerm(rating);
+
       render();
+
     });
   }
 
   //handle error message
   function handleErrorMessageClose() {
     $('.error-message').on('click','#js-error-close', function(event){
+
       event.preventDefault();
+
       $('.error-message').addClass('hidden');
+      
     });
   }
 

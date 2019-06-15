@@ -20,7 +20,17 @@ h1{
 .new-bookmark-form-container{
   display: block;
   text-align: center;
-  width: auto;
+  max-width: 500px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.filter-label{
+  margin-left: 0;
+}
+
+::placeholder{
+  font-size: 12px;
 }
 
 #js-submit-bookmark-form{
@@ -57,9 +67,28 @@ margin-left: auto;
 margin-right: auto;
 }
 
-button, input[type="text"] {
+button {
   padding: 5px;
 }
+
+input[type="text"], input[type="url"], input[type="textfield"]{
+margin-top: 10px;
+margin-bottom: 10px;
+}
+
+label {
+  display: inline-block;
+  width: 210px; 
+  text-align: right; 
+  margin-left: -225px;
+  }
+
+select{
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+
 
 button:hover {
   cursor: pointer;
@@ -99,11 +128,6 @@ button:hover {
   margin: 0 10px 10px 30px;
 }
 
-.title {
-  display: inline-flex;
-  flex-direction: column;
-}
-
 .ratings-text{
   display: block;
 }
@@ -136,6 +160,13 @@ button:hover {
     width: auto;
   }
 
+  .new-bookmark-form-container{
+    display: block;
+    text-align: center;
+    max-width: auto;
+    margin-right: auto;
+    margin-left: auto;
+  }
 
 }
  

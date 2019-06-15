@@ -8,8 +8,8 @@ const bookmark = (function() {
     if(!title) throw new TypeError('Title must not be blank');
   };
 
-  const validateURL= function(URL) {
-    if(!URL) throw new TypeError('URL must not be blank');
+  const validateURL= function(url) {
+    if(!url) throw new TypeError('URL must not be blank');
   };
     
   const create = function(title, url, desc, rating) {
