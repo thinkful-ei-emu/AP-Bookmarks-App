@@ -24,7 +24,7 @@ const bookmarkList = (function(){
 
             <div class='list-header'>
 
-                <h1><p class="bookmark-title title">${bookmark.title}</p></h1>
+                <h2><p class="bookmark-title title">${bookmark.title}</p></h2>
                 <h3><p class="ratings-text title">Rating: ${bookmark.rating}</p></h3>
                 <button type="button" class="js-expand" id="js-expand">${expand}</button>
                 <button class="bookmark-remove js-bookmark-delete">Delete

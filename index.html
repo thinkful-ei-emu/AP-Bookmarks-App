@@ -15,12 +15,16 @@
     <body>
         <header class="title-bar">
             <h1>Bookmarks</h1>
-            <form id='js-bookmark-button-form' action="">
-                <button type="button" class="add-bookmark-button">Add Bookmark</button>
-            </form>
+    
         </header>
 
-            <div>    
+    <div class="add-button-container">
+        <form id='js-bookmark-button-form' action="">
+                <button type="button" class="add-bookmark-button">Add Bookmark</button>
+            </form>
+        </div>
+
+            <div class="new-bookmark-form-container">    
                                 
                 <form action="" id="js-submit-bookmark-form" class="hidden add-bookmark">
                     <div>
@@ -33,8 +37,9 @@
                     </div>
                     <div>
                         <label for="desc">Description</label>
-                        <textarea type="text" id="desc" name="desc" placeholder="Description of Bookmark"></textarea>
+                        <input type="textfield" id="desc" name="desc" placeholder="Description of Bookmark"></textarea>
                     </div>
+                    
                     <div>
                         <label for="rating">Rating</label>
                         <select type="number" id="rating" name="rating">
@@ -45,6 +50,7 @@
                                 <option value="5">5</option>
                         </select> 
                     </div>
+
                     <button type="submit" name="submit" id="submit" value="Submit">Submit</button>
                     <button type="close" name="close-button" id="close-button" value="Close">Close</button>
                 </form>
